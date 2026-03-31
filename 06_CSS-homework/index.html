@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- <link rel="stylesheet" href="style.css" /> -->
+    <title>Generation Clone - Tailwind CSS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <!-- Final AI Prompt: -->
+  <!-- https://www.generation.org/
+## ก้อปปี้ฟอร์แมตการจัดหน้าเว็บตามเว็บที่กำหนดให้หน่อย
+- ขอแค่ส่วน hero block + band background 2 block ถัดมา
+- ขอให้อยู่ในไฟล์ index.html เดียว
+- เน้นใช้ tailwind โดยแทรกคำสั่งพวก flexbox, clamp, leading เข้าไปในก้ามปู
+- ยังไม่ต้องการโค้ด advanced มาก เน้นประยุกต์ commands เบสิก + commands ที่กำหนดให้
+- รูปภาพ ใส่มั่ว ๆ ไปก่อนก็ได้ แค่อยากเห็นบล็อครูปภาพ จำนวนเท่ากัน และเรียง flex direction อย่างถูกต้อง
+- เน้นให้มีบล็อคซอยตามหน้าเว็บ ยังไม่ต้องใส่สีและฟ้อนต์เยอะ ขอเบสิก ๆ
+- ยังไม่ต้องทำ responsive ขอแค่แบบเวอร์ชันเดสก์ท็อป
+- เน้นความเรียบง่าย ขอแค่โค้ดสำคัญ ๆ ในการเรียนรู้ tailwind + css จากการอ่านโค้ดชุดนี้ -->
+
+  <!-- ตอนนี้ผมกำลังพยายามฝึก Tailwind แต่เวลาไม่พอ เลยต้องพึ่ง AI ครับ แต่เน้น เอาคอมมานด์จำเป็น กำลังสนใจศึกษาคอมมานด์ flexbox, clamp, leading, media query เป็นหลัก พยายามลดทอนให้โค้ดน้อย ๆ จะได้ทำความเข้าใจได้ง่ายครับ ปล. คอมเม้นต์แทรกเองครับ เดี๋ยวให้เอไอช่วยทำความเข้าใจแล้วจะสรุปเป็นคอมเมนต์สไตล์ตัวเองอีกที-->
+
+  <body class="bg-[#f8f9fa] text-gray-900 font-sans py-16">
+    <!-- ============================================================ -->
+
+    <!--                        Hero Section                          -->
+
+    <!-- ============================================================ -->
+    <section class="max-w-5xl mx-auto mb-24 flex flex-col gap-[2rem]">
+      <!-- `max-w-[]` + `mx-auto` เอาไว้ล็อกให้ container กึ่งกลางและไม่ใหญ่เกินไป -->
+      <div class="max-w-2xl flex flex-col gap-4">
+        <h1
+          class="font-bold text-[clamp(2.5rem,5vw,4rem)] leading-[1.1] text-[#0a1f2c]"
+        >
+          Supporting economic mobility
+        </h1>
+        <p
+          class="font-semibold text-[clamp(1rem,1.5vw,1.125rem)] leading-[1.5] text-[#0a1f2c]"
+        >
+          Everyone should have access to a good job and income that can help
+          them and their families have a better life.
+        </p>
+      </div>
+
+      <div class="w-full h-[500px] rounded-[2rem] overflow-hidden">
+        <img
+          src="images/smiling-woman-e1690828017538.jpg"
+          alt="Hero"
+          class="w-full h-full object-cover"
+        />
+      </div>
+    </section>
+    <!-- ============================================================ -->
+
+    <!--                        Band1 Section                         -->
+
+    <!-- ============================================================ -->
+    <section class="max-w-5xl mx-auto mb-24 flex gap-[4rem] items-center">
+      <div class="w-1/2 relative">
+        <div
+          class="absolute inset-0 bg-[#005b9f] rounded-[2rem] translate-x-[1rem] translate-y-[1rem]"
+        ></div>
+        <img
+          src="images/img_7364-3.jpg"
+          alt="Person"
+          class="relative z-10 w-full rounded-[2rem] object-cover"
+        />
+      </div>
+
+      <div class="w-1/2 flex flex-col gap-[1.5rem] items-start">
+        <h2
+          class="font-bold text-[clamp(2rem,3vw,2.5rem)] leading-[1.2] text-[#0a1f2c]"
+        >
+          Generation is a global nonprofit that believes in the power of jobs to
+          change lives
+        </h2>
+        <p class="leading-[1.6] text-gray-700">
+          We train and place adults into careers that would otherwise be
+          inaccessible. And we advocate to improve the workforce system.
+          Launched in 2015, Generation comprises a global hub and a network of
+          in-country affiliates that span 17 countries.
+        </p>
+        <button
+          class="bg-[#78badd] text-black font-semibold border-2 border-black rounded-lg px-[1.5rem] py-[0.5rem] shadow-[4px_4px_0_0_rgba(0,0,0,1)]"
+        >
+          Learn more about us ->
+        </button>
+      </div>
+    </section>
+    <!-- ============================================================ -->
+
+    <!--                        Band2 Section                         -->
+
+    <!-- ============================================================ -->
+    <section class="max-w-5xl mx-auto flex flex-col gap-[3rem]">
+      <!-- ============================================================ -->
+      <!--                           Upper                              -->
+      <!-- ============================================================ -->
+      <div class="flex flex-col gap-[1rem]">
+        <p class="text-sm font-bold tracking-widest text-gray-600 uppercase">
+          Breadth, Depth & Durability
+        </p>
+        <h2
+          class="font-bold text-[clamp(2rem,3vw,2.5rem)] leading-[1.2] text-[#0a1f2c] max-w-2xl"
+        >
+          Our impact comes from advancing three areas simultaneously
+        </h2>
+      </div>
+      <!-- ============================================================ -->
+      <!--                           Lower                              -->
+      <!-- ============================================================ -->
+      <div class="flex gap-[2rem] items-start">
+        <!-- ============================================================ -->
+        <!--                               Col1                           -->
+        <!-- ============================================================ -->
+        <div class="flex-1 flex flex-col gap-[1rem]">
+          <h3 class="text-2xl font-bold">Breadth</h3>
+          <p class="text-sm leading-[1.5]">
+            Our annual and cumulative volume of graduates around the world
+          </p>
+          <div
+            class="bg-[#0076b6] text-white text-[clamp(2rem,3vw,3rem)] font-bold rounded-lg px-4 py-1 w-max"
+          >
+            150,600
+          </div>
+          <p class="text-sm font-semibold">
+            graduates across 17 countries since launching in 2015
+          </p>
+          <div
+            class="bg-[#0076b6] text-white text-[clamp(2rem,3vw,3rem)] font-bold rounded-lg px-4 py-1 w-max"
+          >
+            466,860
+          </div>
+          <p class="text-sm font-semibold">
+            family members indirectly supported
+          </p>
+        </div>
+        <!-- ============================================================ -->
+        <!--                               Col2                           -->
+        <!-- ============================================================ -->
+        <div class="flex-1 flex flex-col gap-[1rem]">
+          <h3 class="text-2xl font-bold">Depth</h3>
+          <p class="text-sm leading-[1.5]">
+            Our employment and income outcomes within 3 and 6 months of program
+            completion
+          </p>
+          <div
+            class="bg-[#3dae4b] text-black text-[clamp(2rem,3vw,3rem)] font-bold rounded-lg px-4 py-1 w-max"
+          >
+            83%
+          </div>
+          <p class="text-sm font-semibold">
+            of graduates placed in jobs within six months of program completion
+            (73% at three months)
+          </p>
+          <div
+            class="bg-[#3dae4b] text-black text-[clamp(2rem,3vw,3rem)] font-bold rounded-lg px-4 py-1 w-max"
+          >
+            $2.3 billion
+          </div>
+          <p class="text-sm font-semibold">
+            in cumulative wages earned by graduates since 2015
+          </p>
+        </div>
+        <!-- ============================================================ -->
+        <!--                               Col3                           -->
+        <!-- ============================================================ -->
+        <div class="flex-1 flex flex-col gap-[1rem]">
+          <h3 class="text-2xl font-bold">Durability</h3>
+          <p class="text-sm leading-[1.5]">
+            Sustained employment, income, and well-being outcomes over time.<br /><br />Our
+            alumni 2-5 years after graduation:
+          </p>
+
+          <div class="flex gap-[0.5rem]">
+            <div class="flex-1 flex flex-col gap-2">
+              <div
+                class="bg-[#ffd24f] text-black text-2xl font-bold rounded-lg py-1 text-center"
+              >
+                76%
+              </div>
+              <p class="text-xs font-semibold">continue to be employed</p>
+            </div>
+            <div class="flex-1 flex flex-col gap-2">
+              <div
+                class="bg-[#ffd24f] text-black text-2xl font-bold rounded-lg py-1 text-center"
+              >
+                80%
+              </div>
+              <p class="text-xs font-semibold">can meet daily needs</p>
+            </div>
+            <div class="flex-1 flex flex-col gap-2">
+              <div
+                class="bg-[#ffd24f] text-black text-2xl font-bold rounded-lg py-1 text-center"
+              >
+                73%
+              </div>
+              <p class="text-xs font-semibold">attaining a living wage</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- ============================================================ -->
+      <!--                               btn                            -->
+      <!-- ============================================================ -->
+      <button
+        class="bg-white text-black font-semibold border-2 border-black rounded-lg px-[1.5rem] py-[0.5rem] shadow-[4px_4px_0_0_rgba(0,0,0,1)] w-max mt-4"
+      >
+        More impact ->
+      </button>
+    </section>
+  </body>
+</html>
